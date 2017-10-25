@@ -31,7 +31,7 @@ module.exports = function sendStatus({ state, description }) {
       } else if (response.statusCode >= 400) {
         console.error('Failed to post status to GitHub, request failed with', response);
       } else {
-        console.log(`Posted status to GitHub for PR #${config.githubPullRequestId}`);
+        console.log(`Posted status to GitHub for PR #${config.githubPullRequestId}`, response);
       }
     }
   );
