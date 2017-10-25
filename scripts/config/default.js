@@ -25,5 +25,11 @@ module.exports = {
   githubSourceBranch: process.env.GITHUB_SOURCE_BRANCH,
 
   // pull request number, e.g. 123
-  githubPullRequestId: process.env.GITHUB_PR_NUMBER
+  githubPullRequestId: process.env.GITHUB_PR_NUMBER,
+
+  // the current commit SHA - only used for sending commit status updates
+  githubCommit: process.env.COMMIT,
+
+  // The token to use for sending github statuses
+  githubTokenStatuses: process.env.GITHUB_TOKEN_FOR_STATUSES,
 };

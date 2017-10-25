@@ -3,6 +3,9 @@ const utils = require('./utils');
 const config = require('./config');
 const log = require('./log');
 module.exports = function postDeploy() {
+  if (!config.githubUsername) {
+    return console.log('Github Username not supplied, skipping message posting to GitHub PR.');
+  }
   const expUrl = `exp://exp.host/@${config.expUsername}/${utils.readPackageJSON().name}`;
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${expUrl}`;
   const issueUrl = `https://${config.githubUsername}:${config.githubToken}@api.github.com/repos/${config.githubOrg}/${config.githubRepo}/issues/${config.githubPullRequestId}/comments`;

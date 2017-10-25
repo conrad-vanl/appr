@@ -5,6 +5,7 @@ const config = require('./scripts/config');
 const log = require('./scripts/log');
 const preDeploy = require('./scripts/pre-deploy');
 const postDeploy = require('./scripts/post-deploy');
+const sendStatus = require ('./scripts/send-status');
 const localExp = './node_modules/exp/bin/exp.js';
 log('Logging into Expo...');
 spawn(localExp, ['login', '-u', config.expUsername, '-p', config.expPassword], loginError => {

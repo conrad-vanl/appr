@@ -6,5 +6,7 @@ module.exports = {
   githubOrg: (process.env.TRAVIS_REPO_SLUG || '').split('/')[0],
   githubRepo: (process.env.TRAVIS_REPO_SLUG || '').split('/')[1],
   githubSourceBranch: process.env.TRAVIS_PULL_REQUEST_BRANCH,
-  githubPullRequestId: process.env.TRAVIS_PULL_REQUEST
+  githubPullRequestId: process.env.TRAVIS_PULL_REQUEST,
+  githubCommit: process.env.TRAVIS_COMMIT,
+  githubTokenStatuses: process.env.GITHUB_TOKEN_FOR_STATUSES,
 };
