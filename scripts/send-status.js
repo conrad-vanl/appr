@@ -3,7 +3,7 @@ const utils = require('./utils');
 const config = require('./config');
 const log = require('./log');
 module.exports = function sendStatus({ state, description }) {
-  if (!config.githubTokenStatuses) {
+  if (!config.githubTokenStatuses || !config.githubCommit) {
     return console.log('Skipping GitHub status');
   }
   const targetUrl = `https://expo.io/@${config.expUsername}/${utils.readPackageJSON().name}`;
