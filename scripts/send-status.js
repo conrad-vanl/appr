@@ -23,8 +23,7 @@ module.exports = function sendStatus({ state, description }) {
         'User-Agent': 'ci',
         'Authorization': `token ${config.githubTokenStatuses}`,
       },
-    },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     },
     (error, response) => {
       if (error) {
