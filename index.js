@@ -40,7 +40,7 @@ spawn(localExp, ['login', '-u', config.expUsername, '-p', config.expPassword], l
         state: 'success',
         description: 'Deploy preview ready!',
       });
-      postDeploy();
+      // postDeploy();
     }
   });
 });
